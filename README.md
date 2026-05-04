@@ -25,7 +25,7 @@ Este proyecto ha sido desarrollado mediante una colaboración estratégica con *
 
 ### 2. Modelado Predictivo (`modelos_predicción_...ipynb`)
 * **Algoritmo:** **XGBoost Classifier** con regularización avanzada (`reg_alpha`, `reg_lambda`, `gamma`) para evitar el sobreajuste.
-* **Validación Temporal (`TimeSeriesSplit`):** Entrenamiento (2000-2023), Validación (2024) y Test Final (2025).
+* **Validación Temporal (`TimeSeriesSplit`):** Entrenamiento (años 2000-2023), Validación (año 2024) y Test Final (año 2025).
 * **Evaluación Probabilística:** Optimización basada en el **Brier Score** (~0.219) y **Log-Loss**, garantizando que las probabilidades de victoria estén matemáticamente calibradas.
 
 ## 📊 Explicabilidad del Modelo (SHAP Analysis)
@@ -39,10 +39,19 @@ El uso de **SHAP** revela que la IA utiliza estrategias distintas según el circ
 
 *Los gráficos SHAP muestran que el modelo penaliza la edad avanzada y premia la especialización técnica en el circuito principal.*
 
-## 📈 Resultados Finales (Año de Test 2025)
-* **Accuracy:** ~64.22%
-* **Brier Score:** 0.219 (Excelente calibración probabilística).
-* **Rendimiento:** El modelo mantiene su capacidad predictiva en datos "fuera de muestra" (2025), demostrando robustez ante el cambio de tendencia en el circuito.
+## 📈 Resultados Finales
+
+Los modelos fueron evaluados con un *dataset* completamente aislado (partidos de 2025) para garantizar un escenario de predicción real libre de sesgos y sobreajuste:
+
+**🎾 Modelo ATP (Circuito Principal)**
+* **Accuracy:** 64.22%
+* **Brier Score:** 0.219 (Excelente calibración en un entorno de alta jerarquía y estabilidad).
+
+**🎾 Modelo Challenger (Circuito de Ascenso)**
+* **Accuracy:** 63.53%
+* **Brier Score:** 0.228 (Resultado muy sólido teniendo en cuenta la alta volatilidad e irregularidad intrínseca de este circuito).
+
+**Rendimiento General:** Ambos modelos mantienen su capacidad predictiva en datos no empleados en el entrenamiento (año 2025), demostrando robustez ante el cambio de tendencia, relevo generacional y nuevas dinámicas en el circuito profesional.
 
 ## 🛠️ Stack Tecnológico
 * **Lenguaje:** Python
